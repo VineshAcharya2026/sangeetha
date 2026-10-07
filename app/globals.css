@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --maroon: #800000;
+  --maroon-deep: #5c1010;
+  --gold: #c9a227;
+  --gold-light: #e8c46a;
+  --cream: #fffdf0;
+  --tan: #c69c6d;
+  --charcoal: #2c2118;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(198, 156, 109, 0.45);
+  color: #2c2118;
+}
+
+.kolam-bg {
+  background-color: #fffdf0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(198, 156, 109, 0.12) 1px, transparent 0);
+  background-size: 26px 26px;
+}
+
+.ornate-rule {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(198, 156, 109, 0.35) 20%,
+    var(--tan) 50%,
+    rgba(198, 156, 109, 0.35) 80%,
+    transparent
+  );
+}
+
+.section-title-underline {
+  width: 3.5rem;
+  height: 3px;
+  background: var(--tan);
+  border-radius: 2px;
+}
+
+.btn-tan {
+  @apply inline-flex items-center justify-center rounded-md bg-tan px-6 py-2.5 font-body text-sm font-semibold text-white shadow-sm transition hover:bg-tan-dark focus-ring;
+}
+
+.btn-tan-outline {
+  @apply inline-flex items-center justify-center rounded-md border-2 border-tan bg-transparent px-6 py-2.5 font-body text-sm font-semibold text-maroon-deep transition hover:bg-tan/10 focus-ring;
+}
+
+.card-soft {
+  @apply rounded-xl border border-tan/20 bg-white shadow-[0_8px_30px_-12px_rgba(92,16,16,0.15)];
+}
+
+.hero-sparkle {
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 50%, rgba(198, 156, 109, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 70% at 85% 40%, rgba(30, 40, 80, 0.75) 0%, transparent 50%),
+    linear-gradient(105deg, #3d2817 0%, #1a2238 48%, #0f1525 100%);
+}
+
+.frame-gold {
+  box-shadow:
+    0 0 0 3px #c69c6d,
+    0 0 0 6px #fffdf0,
+    0 12px 40px -16px rgba(92, 16, 16, 0.25);
+}
+
+.header-light {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 24px -8px rgba(44, 33, 24, 0.12);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #c69c6d;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 80;
+  border-radius: 9999px;
+  background: #800000;
+  color: #fffdf0;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
